@@ -1,0 +1,222 @@
+<html>
+    <head>
+        <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+
+        <!-- include ar.js for A-Frame -->
+        <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
+    </head>
+    <body>
+        <a-scene embedded arjs>
+
+            <!--
+assets are the objects that can be included or linked into your code
+in this example, this includes an obj file and a material mapped file
+notice that "src" is a way to direct the path to the file - the obj and mtl file is within the assets folder
+-->
+            <a-assets>
+                
+//HELIX BASE 
+                <a-asset-item id="HELIX-obj" src="assets/HELIX.obj"></a-asset-item>
+                
+// WE ASSETS  
+            //MODEL
+                <a-asset-item id="WE YMCA5-obj" src="assets/WE YMCA5.obj"></a-asset-item>
+                <a-asset-item id= "WE YMCA5-mtl" src="assets/WE YMCA5.mtl"></a-asset-item>
+                //WINDOWS
+                <a-asset-item id="WE_YMCA5_Windows-obj" src="assets/WE_YMCA5_Windows.obj"></a-asset-item>
+                <a-asset-item id= "WE_YMCA5_Windows-mtl" src="assets/WE_YMCA5_Windows.mtl"></a-asset-item>
+                //STREET
+                <a-asset-item id="WE_YMCA5_Street-obj" src="assets/WE_YMCA5_Street.obj"></a-asset-item>
+                <a-asset-item id= "WE_YMCA5_Street-mtl" src="assets/WE_YMCA5_Street.mtl"></a-asset-item>
+                //TOPSOIL
+                <a-asset-item id="WE_YMCA5_TopSoil-obj" src="assets/WE_YMCA5_TopSoil.obj"></a-asset-item>
+                <a-asset-item id= "WE_YMCA5_TopSoil-mtl" src="assets/WE_YMCA5_TopSoil.mtl"></a-asset-item>
+                //MT Bank 
+                <a-asset-item id="MT_BANK-obj" src="assets/MT_BANK.obj"></a-asset-item>
+                <a-asset-item id= "MT_BANK-mtl" src="assets/MT_BANK.mtl"></a-asset-item>
+
+                
+                
+                
+                
+            //ARTIFACTS
+                <img id="01_MT_Mural" src="/assets/images_WE/Artifacts/01_MT_Mural.png">
+                <img id="03_MT_BANK" src="/assets/images_WE/Artifacts/03_MT_BANK.jpg">
+                <img id="05_Black_History_Board" src="/assets/images_WE/Artifacts/05_Black_History_Board.jpg">
+
+            //HISTORIC
+                <img id="01_Building_Photo" src="/assets/images_WE/Historic/01_Building_Photo.jpg">
+                <img id="04_Interior" src="/assets/images_WE/Historic/04_Interior.jpg">
+                <img id="06_Side_Facade" src="/assets/images_WE/Historic/06_Side_Facade.jpg">
+               
+            
+                
+
+                
+//MICHIGAN ASSETS 
+            //MODEL
+                <a-asset-item id="Michigan_YMCA-obj" src="assets/Michigan_YMCA.obj"></a-asset-item>
+                <a-asset-item id= "Michigan_YMCA-mtl" src="assets/Michigan_YMCA.mtl"></a-asset-item>
+            //windows
+                <a-asset-item id="Michigan_YMCA_Windows-obj" src="assets/Michigan_YMCA_Windows.obj"></a-asset-item>
+                <a-asset-item id= "Michigan_YMCA_Windows-mtl" src="assets/Michigan_YMCA_Windows.mtl"></a-asset-item>
+                
+            //IMAGES
+                <img id="07_John_Brent" src="/assets/images_Michigan/07_John_Brent.jpg">
+                <img id="06_News_Article" src="/assets/images_Michigan/06_News_Article.jpg">
+                <img id="03_Michigan_Addition" src="/assets/images_Michigan/03_Michigan_Addition.png">
+                <img id="08_WEB_DE_BOIS_MICHIGAN" src="/assets/images_Michigan/08_WEB_DE_BOIS_MICHIGAN.jpg">
+                <img id="01_Michigan_Render" src="/assets/images_Michigan/01_Michigan_Render.png">
+                
+                08_WEB_DE_BOIS_MICHIGAN
+                
+            </a-assets>
+
+            <!--
+the entity is where you start linking in your assets
+note, you don't necessarily need to separate out your assets, you can lump it all in entity below
+however, sometimes, it's easier to organize your code by first thinking about all the assets you need, and then calling them when you need
+-->
+            // Construct entity
+            // To load image: https://aframe.io/docs/1.5.0/primitives/a-image.html
+
+<!--            <a-box material='opacity: 0.9;' color="#4CC3D9"></a-box>-->
+            
+            
+            
+            
+<!--
+            <a-plane color="black" height="5" width="7"
+                      rotation="-90 0 0" opacity="50"
+                      position="0 -0.5 -2"></a-plane>
+-->
+            
+//WE YMCA 
+        //MODEL
+            <a-entity scale="0.009 0.009 0.009" 
+                      position="0 0 -3."
+                      obj-model="obj: #HELIX-obj" 
+                      rotation="-90 180 0"></a-entity>
+            
+            
+            <a-entity scale="0.009 0.009 0.009" 
+                      position="0 0 -3."
+                      obj-model="obj: #WE YMCA5-obj; mtl: #WE YMCA5-mtl" 
+                      rotation="-90 180 0"></a-entity>
+            //WINDOWS
+            <a-entity scale="0.009 0.009 0.009" 
+                      position="0 0 -3."
+                      obj-model="obj: #WE_YMCA5_Windows-obj; mtl: #WE_YMCA5_Windows-mtl" 
+                      rotation="-90 180 0"></a-entity>
+            //STREET
+            <a-entity scale="0.009 0.009 0.009" 
+                      position="0 0.05 -3."
+                      obj-model="obj: #WE_YMCA5_Street-obj; mtl: #WE_YMCA5_Street-mtl" 
+                      rotation="-90 180 0"></a-entity>
+<!--
+            //TOPSOIL
+            <a-entity scale="0.009 0.009 0.009" 
+                      position="0 0 -3."
+                      obj-model="obj: #WE_YMCA5_TopSoil-obj; mtl: #WE_YMCA5_TopSoil-mtl" 
+                      rotation="-90 180 0"></a-entity>
+-->
+
+            //MT BANK
+            <a-entity scale="0.009 0.009 0.009" 
+                      position="0 0.05 -3."
+                      obj-model="obj: #MT_BANK-obj; mtl: #MT_BANK-mtl" 
+                      rotation="-90 180 0"></a-entity>
+        //ARTIFACTS
+            <a-image src="#01_MT_Mural" 
+                     height="1" width="2"
+                     scale="1 0.6 1" position="0 0.1 0"
+                     rotation="-90 0 0"></a-image>
+            <a-image src="#03_MT_BANK" 
+                     height="1" width="1"
+                     scale="1 1 1" 
+                     position="1.7 0.1 0"
+                     rotation="-90 0 0"></a-image>
+            <a-image src="#05_Black_History_Board" 
+                     height="1" width="1"
+                     scale="1 1 1" 
+                     position="3 0.1 -2"
+                     rotation="-90 0 0"></a-image>
+
+             
+        //HISTORIC
+            <a-image src="#01_Building_Photo" 
+                     height="2" width="1.5"
+                     scale="1 1 1" 
+                     position="3 0.1 -3.4"
+                     rotation="-90 90 0"></a-image>
+            <a-image src="#04_Interior" 
+                     height="2" width="1.5"
+                     scale="1 1 1" 
+                     position="3 0.1 -5"
+                     rotation="-90 90 0"></a-image>
+            <a-image src="#06_Side_Facade" 
+                     height="2" width="1.5"
+                     scale="1 1 1" 
+                     position="-0. 0.1 2"
+                     rotation="-90 90 0"></a-image>
+            
+             
+//MICHIGAN YMCA
+        //MODEL
+            <a-entity scale="0.009 0.009 0.009" 
+                      position="-1 0 -3"
+                      obj-model="obj: #Michigan_YMCA-obj; mtl: #Michigan_YMCA-mtl" rotation="-90 -60 0"></a-entity>
+            //windows
+            <a-entity scale="0.009 0.009 0.009" 
+                      position="-1 0 -3"
+                      obj-model="obj: #Michigan_YMCA_Windows-obj; mtl: #Michigan_YMCA_Windows-mtl" rotation="-90 -60 0"></a-entity>
+            
+            
+           
+            
+            
+        //IMAGES
+            <a-image src="#07_John_Brent" 
+                     height="1" width="1"
+                     scale="1 1 1" 
+                     position="-2 0.1 0"
+                     rotation="-90 0 0"></a-image>
+            <a-image src="#06_News_Article" 
+                     height="1.5" width="0.5"
+                     scale="2 2 0" 
+                     position="-3.2 0.1 0"
+                     rotation="-90 0 0"></a-image>
+            <a-image src="#03_Michigan_Addition" 
+                     height="1" width="1.5"
+                     scale="2 2 0" 
+                     position="-5.5 0 0"
+                     rotation="-90 0 0"></a-image>
+            <a-image src="#08_WEB_DE_BOIS_MICHIGAN" 
+                     height="1" width="1"
+                     scale="2 2 0" 
+                     position="-5.5 0 -3"
+                     rotation="-90 0 0"></a-image>
+            <a-image src="#01_Michigan_Render" 
+                     height="1" width="1.5"
+                     scale="2 2 0" 
+                     position="-5.5 0 -5.5"
+                     rotation="-90 0 0"></a-image>
+
+            
+            
+
+
+
+
+        
+
+
+
+<!--                        <a-animation attribute="rotation" to= "0 360 0" dur="9000" repeat="indefinite" easing="linear"></a-animation>-->
+
+            <!-- define a camera which will move according to the marker position -->
+            <a-marker-camera preset='hiro'></a-marker-camera>      
+        </a-scene>
+    </body>
+</html>
